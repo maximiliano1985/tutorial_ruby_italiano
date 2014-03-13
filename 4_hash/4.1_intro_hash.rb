@@ -30,7 +30,6 @@ puts a
 a = 3
 puts a.to_s.to_sym
 # questo è necessario perchè i simboli sono il modo con cui l'interprete di Ruby rappresenta i NOMI (i.e. le stringhe). Per i numeri la logica interna di rappresentazione è diversa. Per questo motivo in generale non ha mai senso convertire numeri a simboli.
-# NB: IN UNA HASH (ARRAY INDICIZZATO) NON HA SENSO USARE NUMERI COME CHIAVI. SE VOGLIO ACCEDERE AL MIO ARRAY CON I NUMERI USO DIRETTAMENTE GLI ARRAY. 
 
 
 ### LE HASH

@@ -1,3 +1,26 @@
+#!/usr/bin/env ruby
+#-------------------------------------------------------------------------
+#  Corso di Fondamenti di Informatica e Calcolo Numerico
+#  AA 2013/2014 
+#  
+#  Esercitazioni in Laboratorio: e.5_plot_ASCII.rb
+#
+#  Autori:
+#     Enrico Bertolazzi and Carlos Maximiliano Giorgio Bort
+#     Dipartimento di Ingeneria Industriale
+#     Università di Trento
+#
+#  Sito web:
+#     http://www.ing.unitn.it/~bertolaz/
+#
+#  Contatti:
+#     enrico.bertolazzi@unitn.it
+#     cm.giorgiobort@unitn.it
+#
+#  Copyright (c) 2014 Università di Trento. Tutti i diritti riservati.
+#     
+#-------------------------------------------------------------------------
+
 COLONNE_PLOT = 100
 RIGHE_PLOT   = 30
 DIGITS       = 2

@@ -1,3 +1,27 @@
+#!/usr/bin/env ruby
+#-------------------------------------------------------------------------
+#  Corso di Fondamenti di Informatica e Calcolo Numerico
+#  AA 2013/2014 
+#  
+#  Esercitazioni in Laboratorio: e.2_cambio_base.rb
+#
+#  Autori:
+#     Enrico Bertolazzi and Carlos Maximiliano Giorgio Bort
+#     Dipartimento di Ingeneria Industriale
+#     Università di Trento
+#
+#  Sito web:
+#     http://www.ing.unitn.it/~bertolaz/
+#
+#  Contatti:
+#     enrico.bertolazzi@unitn.it
+#     cm.giorgiobort@unitn.it
+#
+#  Copyright (c) 2014 Università di Trento. Tutti i diritti riservati.
+#     
+#-------------------------------------------------------------------------
+
+
 # 101110 -> 46
 # 100001 -> 33
 # 111100 -> 33
@@ -49,9 +73,6 @@ x_decimale = x_esadecimale.hex
 puts "torno indietro, x_esadecimale #{x_esadecimale} in decimale è #{x_decimale} "
 puts ""
 
-
-##### fare conversione di base con la funzioncina
-#===============================================================
 
 
 

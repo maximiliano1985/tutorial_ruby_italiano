@@ -1,3 +1,27 @@
+#!/usr/bin/env ruby
+#-------------------------------------------------------------------------
+#  Corso di Fondamenti di Informatica e Calcolo Numerico
+#  AA 2013/2014 
+#  
+#  Esercitazioni in Laboratorio: e.3_molto_semplice_plot_ASCII.rb
+#
+#  Autori:
+#     Enrico Bertolazzi and Carlos Maximiliano Giorgio Bort
+#     Dipartimento di Ingeneria Industriale
+#     Università di Trento
+#
+#  Sito web:
+#     http://www.ing.unitn.it/~bertolaz/
+#
+#  Contatti:
+#     enrico.bertolazzi@unitn.it
+#     cm.giorgiobort@unitn.it
+#
+#  Copyright (c) 2014 Università di Trento. Tutti i diritti riservati.
+#     
+#-------------------------------------------------------------------------
+
+
 COLONNE_PLOT = 100
 RIGHE_PLOT   = 20
 DIGITS       = 2
@@ -16,7 +40,6 @@ def plot_matrix(mat)
   end
   puts str
 end
-
 
 
 # Genera i dati

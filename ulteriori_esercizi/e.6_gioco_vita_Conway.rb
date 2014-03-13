@@ -1,9 +1,38 @@
-=begin
-Il gioco della vita è un famosissimo automa cellulare elaborato dal matematico John Conway negli anni sessanta;  si tratta sostanzialmente di una griglia costituita da celle e ognuna di esse può essere o viva o morta(piena o vuota). Data una situazione iniziale della griglia, le successive iterazioni dell’algoritmo seguono delle regole semplicissime per decidere quali celle si devono accendere( nascere o continuare a vivere ) e quali spegnere( morire ), a seconda del numero di “vicini” che si trovano nel quadrato 3×3 con centro nella cella considerata
-
-# implementazione in C:
-# http://barcadero.wordpress.com/2011/03/06/programmare-il-gioco-della-vita-di-conway/
+#!/usr/bin/env ruby
+#-------------------------------------------------------------------------
+#  Corso di Fondamenti di Informatica e Calcolo Numerico
+#  AA 2013/2014 
+#  
+#  Esercitazioni in Laboratorio: e.6_gioco_vita_Conway.rb
 #
+#  Autori:
+#     Enrico Bertolazzi and Carlos Maximiliano Giorgio Bort
+#     Dipartimento di Ingeneria Industriale
+#     Università di Trento
+#
+#  Sito web:
+#     http://www.ing.unitn.it/~bertolaz/
+#
+#  Contatti:
+#     enrico.bertolazzi@unitn.it
+#     cm.giorgiobort@unitn.it
+#
+#  Copyright (c) 2014 Università di Trento. Tutti i diritti riservati.
+#     
+#-------------------------------------------------------------------------
+
+=begin
+Il gioco della vita è un famosissimo automa cellulare elaborato dal matematico
+John Conway negli anni sessanta. Si tratta sostanzialmente di una griglia
+costituita da celle e ognuna di esse può essere o viva o morta(piena o vuota).
+Data una situazione iniziale della griglia, le successive iterazioni
+dell’algoritmo seguono delle regole semplicissime per decidere quali celle si
+devono accendere( nascere o continuare a vivere ) e quali spegnere( morire ), a
+seconda del numero di “vicini” che si trovano nel quadrato 3×3 con centro nella
+cella considerata
+
+implementazione in C:
+  http://barcadero.wordpress.com/2011/03/06/programmare-il-gioco-della-vita-di-conway/
 =end
 
 require 'pry'
