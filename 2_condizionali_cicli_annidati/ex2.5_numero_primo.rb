@@ -1,26 +1,16 @@
 #!/usr/bin/env ruby
-#-------------------------------------------------------------------------
-#  Corso di Fondamenti di Informatica e Calcolo Numerico
-#  AA 2013/2014 
-#  
-#  Esercitazioni in Laboratorio: ex2.5_numero_primo.rb
-#
-#  Autori:
-#     Enrico Bertolazzi and Carlos Maximiliano Giorgio Bort
-#     Dipartimento di Ingeneria Industriale
-#     Università di Trento
-#
-#  Sito web:
-#     http://www.ing.unitn.it/~bertolaz/
-#
-#  Contatti:
-#     enrico.bertolazzi@unitn.it
-#     cm.giorgiobort@unitn.it
-#
-#  Copyright (c) 2014 Università di Trento. Tutti i diritti riservati.
-#     
-#-------------------------------------------------------------------------
-
+#-------------------------------------------------------------------------#
+#  Esercitazioni in Laboratorio per il Corso di                           #
+#  Fondamenti di Informatica e Calcolo Numerico, AA 2013/2014             #
+#                                                                         #
+#  Autori:   Enrico Bertolazzi e Carlos Maximiliano Giorgio Bort          #
+#            Dipartimento di Ingeneria Industriale, Universita` di Trento #
+#  Sito web: http://www.ing.unitn.it/~bertolaz/                           #
+#                                                                         #
+#  Contatti: enrico.bertolazzi@unitn.it, cm.giorgiobort@unitn.it          #
+#                                                                         #
+#  Copyright (c) 2014 E.Bertolazzi e C.M. Giorgio Bort                    #
+#-------------------------------------------------------------------------#
 
 #
 # funzione che verifica se un numero intero e` primo
