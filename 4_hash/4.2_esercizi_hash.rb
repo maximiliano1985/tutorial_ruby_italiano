@@ -1,3 +1,4 @@
+#!/usr/bin/env ruby
 #-------------------------------------------------------------------------#
 #  Esercitazioni in Laboratorio per il Corso di                           #
 #  Fondamenti di Informatica e Calcolo Numerico, AA 2013/2014             #
