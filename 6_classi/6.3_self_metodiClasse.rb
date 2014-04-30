@@ -13,8 +13,8 @@
 #-------------------------------------------------------------------------#
 
 =begin
- Vedremo ora cos'è in ruby la parola chiave 'self'. Quando usata all'interno
- di una classe, la parola 'self' è utilizzata per riferirsi all'oggetto (i.e.
+ Vedremo ora cos'e' in ruby la parola chiave 'self'. Quando usata all'interno
+ di una classe, la parola 'self' e' utilizzata per riferirsi all'oggetto (i.e.
  istanza) corrente.
 
  Vedremo inolte cosa sono i metodi e le variabili di classe
@@ -34,7 +34,7 @@ class Item1
     puts "Metodo di istanza 'show' invocato per #{self}"
   end  
  
-  # se voglio una rappresentazione più leggibile
+  # se voglio una rappresentazione piu' leggibile
   #def to_s
   #  "Item: #{@item_nome}"
   #end
@@ -62,7 +62,7 @@ class Item2
   end
 end
 Item2.show_class # ora uso il metodo 'show' senza istanziare la classe
-#Item2.show_var_instance # da errore perchè la classe non è stata inizializzata
+#Item2.show_var_instance # da errore perche' la classe non e' stata inizializzata
 
 # in alternativa avrei potuto scrivere
 =begin
@@ -77,7 +77,9 @@ end
 
 
 #====#====#====#====#====#====#====#====#====#====#====#====#====#====#====#
-#N.B. I metodi di classe non hanno accesso ai metodi di istanza, o alle variabili di istanza. Al contrario, metodi di istanza possono accedere alle variabili ed ai metodi di classe. Verifichiamo la prima affermazione:
+#N.B. I metodi di classe non hanno accesso ai metodi di istanza, o alle
+# variabili di istanza. Al contrario, metodi di istanza possono accedere
+# alle variabili ed ai metodi di classe. Verifichiamo la prima affermazione:
 #====#====#====#====#====#====#====#====#====#====#====#====#====#====#====#
 puts "_"*40
 class Item3
@@ -112,7 +114,8 @@ class Pianeta
     @@numero_pianeti += 1
   end
   
-  # definisco un metodo di classe che mi permette di accedere alla variabile di istanza numero_pianeti
+  # definisco un metodo di classe che mi permette di accedere
+  # alla variabile di istanza numero_pianeti
   def self.numero_pianeti
     @@numero_pianeti
   end  
@@ -138,12 +141,12 @@ class Foo
   
   @@contatore_class = 20
   
-  def aumenta_cont_inst_class # questo metodo darà errore!
+  def aumenta_cont_inst_class # questo metodo dara' errore!
     @contatore_inst_class += 1
   end
   
   def aumenta_cont_class
-    # questo metodo FUNZIONA perchè POSSO USARE VARIABILI (ma anche metodi)
+    # questo metodo FUNZIONA perche' POSSO USARE VARIABILI (ma anche metodi)
     # DI CLASSE NEI METODI di istanza
     @@contatore_class += 1
   end
@@ -166,14 +169,14 @@ puts Foo.increment_counter # OK, funziona
 f = Foo.new
 #puts f.aumenta_cont_inst_class
 puts "f.aumenta_cont_class #{f.aumenta_cont_class}"
-# questo da errore perchè NON POSSO USARE VARIABILI DI
+# questo da errore perche' NON POSSO USARE VARIABILI DI
 #  ISTANZA DI CLASSE NEI METODI DI ISTANZA
 
 
 
-# e che differenza c'è tra '@@contatore_class' e '@contatore_inst_class'? Vediamolo...
+# e che differenza c'e' tra '@@contatore_class' e '@contatore_inst_class'? Vediamolo...
 class Bar < Foo
-  @contatore_inst_class = 100 # se non la definisco, vale 'nil', il suo valore non è ereditato
+  @contatore_inst_class = 100 # se non la definisco, vale 'nil', il suo valore non e' ereditato
   @@foo_var_cl = 140 # questo NON VIENE SOVRASCRITTO!!!
 end
 puts "Variabile @contatore_inst_class in Foo #{Foo.current_count_inst_class}"
@@ -184,19 +187,28 @@ puts "Variabile @@contatore_class in Bar #{Bar.curret_count_cl}"
 
 =begin RIASSUMENDO
 
-A) I metodi di classe non hanno accesso ai metodi di istanza, o alle variabili di istanza. Al contrario, metodi di istanza possono accedere alle variabili ed ai metodi di classe.
+A) I metodi di classe non hanno accesso ai metodi di istanza, 
+   o alle variabili di istanza. Al contrario, metodi di istanza 
+   possono accedere alle variabili ed ai metodi di classe.
 
-B) Le variabili di istanza sono disponibili solo per istanze di classi, e si scrivono come '@foo'. Le variabili di classe invece sono disponibili sia per i metodi di classe che per i metodi di istanza, e si scrivono come '@@foo'.
+B) Le variabili di istanza sono disponibili solo per istanze di classi,
+   e si scrivono come '@foo'. Le variabili di classe invece sono disponibili 
+   sia per i metodi di classe che per i metodi di istanza, e si scrivono 
+   come '@@foo'.
 
-C) Le variabili di istanza di classe si scrivono come le variabili di istanza ('@foo') ma vanno dichiarate nel corpo della classe e hanno proprietà molto diverse dalle variabili di istanza.
+C) Le variabili di istanza di classe si scrivono come le variabili di istanza
+   ('@foo') ma vanno dichiarate nel corpo della classe e hanno proprieta' molto 
+   diverse dalle variabili di istanza.
 
 D) Le differenze tra VARIABILI DI CLASSE e VARIABILI DI ISTANZA DI CLASSE sono:
 
-  1) le variabili di istanza di classe NON PERMETTONO LA CONDIVISIONE DI DATI ATTRAVERSO TUTTA LA CATENA DI EREDITARIETÀ (cosa che invece fanno le variabili di classe).
+  1) le variabili di istanza di classe NON PERMETTONO LA CONDIVISIONE DI DATI
+     ATTRAVERSO TUTTA LA CATENA DI EREDITARIETA`
+     (cosa che invece fanno le variabili di classe).
 
-  2) le variabili di istanza di classe possono essere USATE SOLO IN METODI DI CLASSE
+  2) le variabili di istanza di classe possono essere
+     USATE SOLO IN METODI DI CLASSE
 =end
-
 
 
 

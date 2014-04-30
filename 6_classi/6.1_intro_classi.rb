@@ -17,14 +17,14 @@ In questa lezione vediamo una introduzione alla programmazione ad oggetti,
 punto di forza dei moderni linguaggi di programmazione, come C++, Python,
 Java, e Ruby.
 UN OGGETTO E' UNA ISTANZA DI UNA CLASSE.
-Vediamo quindi brevemente cos'è una classe, e cosa vuol dire istanziare una
+Vediamo quindi brevemente cos'e' una classe, e cosa vuol dire istanziare una
 classe per creare un oggetto.
 =end
 
 =begin
 CLASSI:
-  una classe è un tipo di dato, definito da:
-   - attributi: variabili/costanti che definiscono le proprietà degli oggetti 
+  una classe e' un tipo di dato, definito da:
+   - attributi: variabili/costanti che definiscono le proprieta' degli oggetti 
    - metodi: funzioni interne, che posso essere applicate agli attributi, ma
              anche a variabili esterne alla classe
   Nelle lezioni successive vedremo che classi diverse possono essere messe in
@@ -35,20 +35,20 @@ CLASSI:
   N.B.: IN RUBY quasi TUTTO E' UN OGGETTO. Ogni valore booleano, intero, float,
   stringa, array, hash, struct, e classe sono FIGLI (i.e. ereditano) da altre
   classi, che a loro volta ereditano dalla classe 'Class'. Posso verificare 
-  ciò invocando il metodo 'class':
+  cio' invocando il metodo 'class':
 =end
 s = 'ciao'
-puts "s è una classe #{s.class}"
-puts "#{s.class} è una classe #{s.class.class}"
+puts "s e' una classe #{s.class}"
+puts "#{s.class} e' una classe #{s.class.class}"
 puts "\n"*3
 
 =begin
 OGGETTI:
-  abbiamo detto che un oggetto è una istanza di una classe. Istanziare
+  abbiamo detto che un oggetto e' una istanza di una classe. Istanziare
   significa allocare della memoria per l'oggetto, e inizializzare la classe.
-  Per inizializzare una classe è necessario invocare il suo metodo
+  Per inizializzare una classe e' necessario invocare il suo metodo
    costruttore, che in Ruby si chiama 'new'. Ad esempio, data una classe
-  'Cane', creerò l'oggetto 'fido' con il seguente comando:
+  'Cane', creero' l'oggetto 'fido' con il seguente comando:
       fido = Cane.new
 =end
 
@@ -56,25 +56,25 @@ OGGETTI:
 ESEMPIO:
   definiamo una classe e creiamo un oggetto istanziandola. Suppongo di
   voler creare un Juke Box con le informazioni delle mie canzoni preferite.
-  Ogni canzone sarà una classe
+  Ogni canzone sara' una classe
 
 Nota: ' buona norma dare i nomi alle classi con la prima lettera maiuscola.
-  Se il nome della mia classe è composto da più parole adotterò la 'CamelCase'
+  Se il nome della mia classe e' composto da piu' parole adottero' la 'CamelCase'
   notation (e.g. 'ClasseDiProva')
 =end
 class Canzone
-  # 1) 'initialize' è in nome del metodo COSTRUTTORE, che verrà invocato quando
+  # 1) 'initialize' e' in nome del metodo COSTRUTTORE, che verra' invocato quando
   # istanzio la classe. In questo caso il costruttore ha tre argomenti:
   #   nome (Stringa) della canzone
   #   artista (Stringa) nome del cantante
-  #   durata  (Float) durata –in secondi– del brano
+  #   durata  (Float) durata â€“in secondiâ€“ del brano
   def initialize(nome, artista, durata)
     # Le variabili che iniziano con la chiocciolina @ e sono definite dentro
     # alla classe sono chiamate VARIABILI DI ISTANZA. Queste rappresentano gli
     # ATTRIBUTI della mia classe, e sono definite (i.e. hanno un valore diverso
     # da 'nil') solo allorquando la classe sia stata istanziata.
-    # Lo SCOPE degli attributi è tutto a classe.
-    ### Per inizializzare la mia classe canzone farò:
+    # Lo SCOPE degli attributi e' tutto a classe.
+    ### Per inizializzare la mia classe canzone faro':
     ### c1 = Song.new('Arabella', 'Arctic Monkeys', 207)
     @nome    = nome
     @artista = artista
@@ -82,7 +82,7 @@ class Canzone
   end
 end
 
-# Per inizializzare la mia classe canzone farò:
+# Per inizializzare la mia classe canzone faro':
 c1 = Canzone.new('Arabella', 'Arctic Monkeys', 207)
 puts c1.inspect
 
@@ -98,7 +98,7 @@ class Canzone
   #       puts Class.methods.sort
   #
   #    Ad esempio vedo che ho il metodo 'inspect', che mi da una descrizione
-  #    della mia istanza. Tuttavia l'output del metodo non è molto leggibile, 
+  #    della mia istanza. Tuttavia l'output del metodo non e' molto leggibile, 
   #    quindi posso sovrascrivere questo metodo.
   def inspect
     # Nota: per interpolare variabili di istanza in una stringa posso scrivere:
@@ -113,7 +113,7 @@ puts c1.inspect
 # 3) Accessori: come posso fare a leggere il nome della mia canzone? Potrei 
 #    pensare di scrivere:
 #     puts c1.nome
-# ma Ruby mi dirà che in metodo 'nome' non è stato definito per la mia classe
+# ma Ruby mi dira' che in metodo 'nome' non e' stato definito per la mia classe
 # c1. Devo quindi definire dei metodi che mi permettano di leggere, ed in caso
 # scrivere, gli attributi (i.e. le variabili di istanza) del mio oggetto.
 # Questo lo posso fare con due metodi:
@@ -132,14 +132,14 @@ class Canzone
   # 3.2) oppure posso creare degli accessori attraverso delle scorciatoie:
   #    attr_reader :nome
   #    attr_writer :nome
-  # quando sono interessato sia all'accessore per la lettura che a quello per la scrittura posso scrivere direttamente:
+  # quando sono interessato sia all'accessore per la lettura che
+  # a quello per la scrittura posso scrivere direttamente:
   attr_accessor :nome, :artista, :durata
 end
 
 puts c1.nome
 c1.nome = "R U mine?"
 puts c1.nome
-
 
 
 

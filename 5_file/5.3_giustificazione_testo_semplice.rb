@@ -11,10 +11,11 @@
 #  Copyright (c) 2014 E.Bertolazzi e C.M. Giorgio Bort                    #
 #-------------------------------------------------------------------------#
 
-require 'pry'
-
 #__________________________________________________________________________
-# 1. Leggere il file 'testo.txt', salvare ogni paragrafo in una hash e farsi stampare sul terminale ogni riga. Durante questa operazione fare in modo di trascurare le righe corrispondenti all'autore, data, e titolo del documento
+# 1. Leggere il file 'testo.txt', salvare ogni paragrafo in una hash
+#    e farsi stampare sul terminale ogni riga.
+#    Durante questa operazione fare in modo di trascurare le righe
+#    corrispondenti all'autore, data, e titolo del documento
 #__________________________________________________________________________
 file = 'testo.txt'
 
@@ -39,7 +40,8 @@ end
 
 
 #__________________________________________________________________________
-# 2. Contare e farsi stampare il numero di paragrafi, parole e di caratteri (inclusi spazi bianchi) nel file. 
+# 2. Contare e farsi stampare il numero di paragrafi, parole e di caratteri
+#    (inclusi spazi bianchi) nel file.
 #__________________________________________________________________________
 ht[:n_paragrafi] = ht[:testo].size
 ht[:n_parole]    = 0
@@ -62,7 +64,8 @@ puts "_"*40
 #__________________________________________________________________________
 ht[:larghezza_testo] = 100 # numero di caratteri in una linea
 
-# quando non posso aggiungere caratteri per completare la mia linea, aggiungo spazi bianchi in corrispondenza delle parole più lunghe
+# quando non posso aggiungere caratteri per completare la mia linea, 
+# aggiungo spazi bianchi dopo ogni parola a partire da sinistra.
 def riempi_stringa(str, lunghezza)
   raise ArgumentError, "Il primo argomento deve essere una stringa" unless str.is_a? String
   raise ArgumentError, "Il secondo argomento deve essere un intero" unless lunghezza.is_a? Integer
@@ -74,32 +77,27 @@ def riempi_stringa(str, lunghezza)
   return str if nsb == 0
     
   par = str.chomp.split " "
-  # ordino le parole dalla più lunga alla più corta
-  par_ord = par.sort{|x,y| y.size <=> x.size}
   
+  i = 1
   while nsb > 0
-    # trova la posizione della parola più lunga nella frase
-    i = par.index par_ord.shift
-    
-    # non aggiungere spazi bianchi prima della prima parola nella linea
-    next if i == 0
-    
-    # preponi uno spazio bianco alla parola più lunga
+    # post poni uno spazio bianco alla fine di ogni parola
     par[i].insert(0, " ")
-    
+    i   += 1
     nsb -= 1
   end
   
   nuova_linea = par.join " "
   l = nuova_linea.size
   
-  # se le parole nella linea sono meno degli spazi bianchi, aggiungo spazi bianchi dopo l'ultima parola 
+  # se le parole nella linea sono meno degli spazi bianchi, 
+  # aggiungo spazi bianchi dopo l'ultima parola 
   nsb = lunghezza-l # numero di spazi bianchi da aggiungere
   nuova_linea << " "*nsb
   
   l = nuova_linea.size
   begin
-    raise RuntimeError, "La lunghezza della linea #{nuova_linea.inspect} di #{l} non è compatibile con #{lunghezza}" unless l == lunghezza
+    msg = "La lunghezza della linea #{nuova_linea.inspect} di #{l} non e` compatibile con #{lunghezza}"
+    raise RuntimeError, msg unless l == lunghezza
   rescue
     binding.pry
   end
@@ -112,7 +110,8 @@ end # def
 testo_separato = []
 ht[:testo].each{|par| testo_separato << par.split(" ") }
 
-# Giustifico il testo. Ogni array (i.e. paragrafo) contiene le stringhe giustificate (i.e. linee) separate da terminatori di stringa
+# Giustifico il testo. Ogni array (i.e. paragrafo) contiene le stringhe 
+# giustificate (i.e. linee) separate da terminatori di stringa
 ht[:testo_giustificato] = []
 ht[:testo].each do |paragrafo|
   parole = paragrafo.split " "
@@ -126,7 +125,8 @@ ht[:testo].each do |paragrafo|
     # togli la parola dall'array 'parole' e mettila in 'p'
     p = parole.shift
     
-    # devo aggiungere la parola alla linea solo se a valle di questa operazione la conta dei caratteri non eccede ht[:larghezza_testo]
+    # devo aggiungere la parola alla linea solo se a valle di questa operazione
+    # la conta dei caratteri non eccede ht[:larghezza_testo]
     linea_giustificata = linea + " " + p
     
     l = linea_giustificata.size
@@ -134,7 +134,8 @@ ht[:testo].each do |paragrafo|
     if l < ht[:larghezza_testo]
       linea = linea_giustificata
       
-      # se la linea è abbastanza corta e ho finito le parole nel paragrafo, allora appendi la linea al paragrafo così com'è
+      # se la linea e` abbastanza corta e ho finito le parole nel paragrafo,
+      # allora appendi la linea al paragrafo cosi` com'e`
       if parole.size == 0
         paragrafo_giustificato << linea << "\n"
         # reinizializza la linea
@@ -150,7 +151,7 @@ ht[:testo].each do |paragrafo|
       # reinizializza la linea con la parola che avanza dalla linea precedente
       linea = p
       
-      # se 'p' è l'ultima parola del paragrafo, mandala accapo
+      # se 'p' e` l'ultima parola del paragrafo, mandala accapo
       paragrafo_giustificato << p << "\n" if parole.empty?
       
     end # if

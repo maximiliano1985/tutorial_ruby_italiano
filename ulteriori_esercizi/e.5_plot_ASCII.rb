@@ -134,7 +134,7 @@ end
 
 if __FILE__ == $0
   function = lambda do |x|
-  	x #Math::sin x #x**2+x+1
+  	x**2 #Math::sin x #x**2+x+1
   end
   
   # Genera i dati

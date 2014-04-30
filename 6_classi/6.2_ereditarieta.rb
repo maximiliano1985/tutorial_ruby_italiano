@@ -13,8 +13,9 @@
 #-------------------------------------------------------------------------#
 
 =begin
-Nell'esempio precedente abbiamo visto cos'è una classe, un oggetto, ed abbiamo
-parlato brevemente di cos'è l'ereditarietà. In questo esempio tratteremo l'ereditarietà in modo più completo
+Nell'esempio precedente abbiamo visto cos'e' una classe, un oggetto, ed abbiamo
+parlato brevemente di cos'e' l'ereditarieta'. In questo esempio tratteremo 
+l'ereditarieta' in modo piu' completo
 =end
 
 # Definisco la classe Canzone con il metodo costruttore, inspect, e gli 
@@ -35,10 +36,11 @@ class Canzone
   end
 end
 
-# L'ereditarietà mi permette di creare una classe che è una specializzazione di
-# un'altra classe. Ad esempio, creo una classe 'CanzoneKaraoke' è deve essere 
+# L'ereditarieta' mi permette di creare una classe che e' una specializzazione di
+# un'altra classe. Ad esempio, creo una classe 'CanzoneKaraoke' e' deve essere 
 # come la classe 'Canzone', con l'unica differenza che deve avere anche 
-# informazioni sul testo della canzone. Devo quindi modificare soltanto il costruttore della classe
+# informazioni sul testo della canzone.
+# Devo quindi modificare soltanto il costruttore della classe
 class CanzoneKaraoke < Canzone
   attr_reader :testo
   
@@ -58,7 +60,7 @@ k1 = CanzoneKaraoke.new('cigarette smoke', 'Arctic Monkeys', 176, testo)
 # visualizziamo le informazioni sulla canzone:
 puts k1.inspect
 # mi restituisce: > Canzone: cigarette smoke -- Arctic Monkeys : 176
-# che è proprio l'output che avevo definito nella classe 'Canzone', ovviemente 
+# che e' proprio l'output che avevo definito nella classe 'Canzone', ovviemente 
 # senza informazioni sul testo. Modifico quindi il metodo 'inspect' di
 # 'CanzoneKaraoke'
 class CanzoneKaraoke < Canzone
@@ -70,6 +72,5 @@ class CanzoneKaraoke < Canzone
   end
 end
 puts k1.inspect
-
 
 
