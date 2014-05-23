@@ -118,6 +118,7 @@ class Checker
       return 'quattro'
     else
       raise ArgumentError, 'Numero di esercizio non valido'.colo(RED)
+    end
   end
 end
 
