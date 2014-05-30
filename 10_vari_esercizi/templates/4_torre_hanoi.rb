@@ -14,7 +14,7 @@
 
 
 =begin
-  Implementare una funzione 'solve_hanoi_tower' che risolva il gioco della Torre
+  Implementare una funzione 'hanoi' che risolva il gioco della Torre
   di Hanoi:
 
   La Torre di Hanoi e' un rompicapo matematico composto da tre paletti e un
@@ -34,14 +34,13 @@
   - Sposta n-1 dischi da B a C
 
 Esercizio:
-  Implementare una (o più) funzioni che risolvono la torre di Hanoi. Il codice 
-  deve prevedere una funzione che si chiami 'solve_hanoi_tower', che accetti in
+  Implementare una funzione che risolva la torre di Hanoi. Il codice 
+  deve prevedere una funzione che si chiami 'hanoi', che accetti in
   ingresso il numero di dischi che stanno sullo stelo di partenza della torre
   e deve restituire un array con le mosse da compiere per risolvere il gioco.
   Tali mosse devono essere rappresentate da un array contenente due numeri: il
   numero dello stelo di partenza, ed il numero dello stelo di arrivo della mossa
-  corrente. L'array delle mosse deve essere salvato in una variabile globale
-  chiamata '$lista_movimenti'.
+  corrente.
   E.g.: [[0,2], [0,1], [2,1], ...]
     significa che la prima mossa prevede di spostare un disco dallo stelo 0 (di
     partenza), allo stelo 2 (quello finale). La seconda mossa prevede di spostare
@@ -51,11 +50,10 @@ Esercizio:
 
   La funzione scritta deve essere testata con il seguente blocco di istruzioni:
 %=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%
-n = 2
+n = 5
 $torri = [[*1..n].reverse, [], []]
-$lista_movimenti = []
-solve_hanoi_tower(n)
-puts $lista_movimenti.inspect
+movimenti = hanoi(n)
+puts movimenti.inspect
 %=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%=%
 
   N.B. includere nel codice la gestione degli errori.
@@ -66,8 +64,6 @@ puts $lista_movimenti.inspect
 ################################################################################
 # RISOLVERE L'ESERCIZIO QUI
 ################################################################################
-
-
 
 
 

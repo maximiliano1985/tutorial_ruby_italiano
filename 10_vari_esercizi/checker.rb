@@ -110,7 +110,7 @@ class Checker
   
   def quattro
     begin
-      raise RuntimeError, "Non è stata definita nessuna funzione con il nome --solve_hanoi_tower--".color(RED) if defined?(solve_hanoi_tower).nil?
+      raise RuntimeError, "Non è stata definita nessuna funzione con il nome --hanoi--".color(RED) if defined?(hanoi).nil?
       
       ref = {
         2=>[[0, 1], [0, 2], [1, 2]],
@@ -123,15 +123,13 @@ class Checker
       ref.each do |k,v|
         puts "Testando la torre di Hanoi con #{k} dischi..."
         $torri = [[*1..k].reverse, [], []]
-        $lista_movimenti = []
-        res = solve_hanoi_tower(k)
+        res = hanoi(k)
         
         raise RuntimeError, "La funzione 'solve_hanoi_tower' deve restituire un Array di movimenti".color(RED) unless res.class == Array
         res.each_with_index do |mov, indx|
           raise RuntimeError, "Il movimento #{indx} della lista di movimenti deve essere un Array di due numeri".color(RED) unless mov.class == Array && mov.size == 2
           raise RuntimeError, "Errore nel calcolo del movimento numero #{indx}, quando il gioco ha #{k} dischi".color(RED) unless mov == v[indx]
         end
-        $lista_movimenti.clear # reset the list of movements
       end
     rescue => e
       puts e
