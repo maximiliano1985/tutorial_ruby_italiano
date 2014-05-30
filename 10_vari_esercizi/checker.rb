@@ -63,7 +63,7 @@ class Checker
   
   def cinque
     begin
-      raise RuntimeError, "Non è stata definita nessuna funzione con il nome --eulero_avanti--".color(RED) if defined?(eulero_avanti).nil?
+      raise RuntimeError, "Non e' stata definita nessuna funzione con il nome --eulero_avanti--".color(RED) if defined?(eulero_avanti).nil?
       
       dati = eulero_avanti(x0=0, x1=2, y0=1, 10){|x,y| -y-3*x}
       res1 = {
@@ -110,7 +110,7 @@ class Checker
   
   def quattro
     begin
-      raise RuntimeError, "Non è stata definita nessuna funzione con il nome --hanoi--".color(RED) if defined?(hanoi).nil?
+      raise RuntimeError, "Non e' stata definita nessuna funzione con il nome --hanoi--".color(RED) if defined?(hanoi).nil?
       
       ref = {
         2=>[[0, 1], [0, 2], [1, 2]],
@@ -138,7 +138,7 @@ class Checker
   
   def tre
     begin
-      raise RuntimeError, "Non è stata definita nessuna classe con il nome --Machine--".color(RED) if defined?(Machine).nil?
+      raise RuntimeError, "Non e' stata definita nessuna classe con il nome --Machine--".color(RED) if defined?(Machine).nil?
       raise RuntimeError, "--Machine-- deve essere una classe".color(RED) unless Machine.class == Class
     
       mach = Machine.new
@@ -160,7 +160,7 @@ class Checker
 
       check1 = [:idle, :selezione, :prepara, :idle]
       res.each do |st|
-        raise RuntimeError, "Lo stato #{st} non è tra quelli noti".color(RED) unless [:idle,:selezione,:informa,:prepara,:reset].include? st
+        raise RuntimeError, "Lo stato #{st} non e' tra quelli noti".color(RED) unless [:idle,:selezione,:informa,:prepara,:reset].include? st
       end
       raise RuntimeError, "Errore nella prima verifica: gli stati attesi sono #{check1}, ma la macchina ha transitato attraverso #{res}".color(RED) unless res == check1
     
@@ -185,7 +185,7 @@ class Checker
   
   def due
     begin
-      raise RuntimeError, "Non è stata definita nessuna funzione con il nome --from10to3--".color(RED) if defined?(from10to3).nil?
+      raise RuntimeError, "Non e' stata definita nessuna funzione con il nome --from10to3--".color(RED) if defined?(from10to3).nil?
       raise RuntimeError, "from10to3 deve essere definita come una funzione".color(RED) unless defined?(from10to3) == 'method'
       test_n = [10,23,432,718]
       res_b3 = [101, 212, 121000, 222121]
@@ -300,5 +300,5 @@ if c.test
   puts "Raggiunti i requisiti minimi necessari per caricare il proprio compito"
   puts "Password: #{crc16("#{Cognome}.#{Nome}")}"
 else
-  puts "Per poter caricare il proprio compito è necessario aver svolto correttamente i primi tre esercizi"
+  puts "Per poter caricare il proprio compito e' necessario aver svolto correttamente i primi tre esercizi"
 end

@@ -1,2 +1,2 @@
-Questa è una prova
+Questa e' una prova
 123.4	ciao	[123456.654321, 22222.1111, -42421.123]

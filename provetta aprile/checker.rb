@@ -82,9 +82,9 @@ class Checker
   
   def uno
     #puts @r_h
-    raise RuntimeError, 'La hash $provetta non è stata definita'.color(RED) unless defined? @r_h
+    raise RuntimeError, 'La hash $provetta non e' stata definita'.color(RED) unless defined? @r_h
     raise RuntimeError, 'La hash $provetta non ha una chiave :testo'.color(RED) unless @r_h.has_key? :testo
-    raise RuntimeError, "Non è stato inserito alcuna stringa nell'array puntato dalla chiave :testo".color(RED) if @r_h[:testo].empty?
+    raise RuntimeError, "Non e' stato inserito alcuna stringa nell'array puntato dalla chiave :testo".color(RED) if @r_h[:testo].empty?
   end
   
   def tre(a_i=nil)
@@ -99,8 +99,8 @@ class Checker
     a_h.each{ |par| h[par] = h.has_key?(par) ? (h[par] + 1) : 1 }
     v = h.sort{|x, y| y.last <=> x.last}
     unless a_i
-      raise RuntimeError, "La parola più frequente individuata -#{@r_h[:parola_frequente]}- non è corretta".color(RED) unless v.first.first  == @r_h[:parola_frequente]
-      raise RuntimeError, "Il numero di volte per cui la parola #{@r_h[:parola_frequente]} si ripete non è corretto".color(RED) unless v.first.last == @r_h[:n_parola_frequente]
+      raise RuntimeError, "La parola più frequente individuata -#{@r_h[:parola_frequente]}- non e' corretta".color(RED) unless v.first.first  == @r_h[:parola_frequente]
+      raise RuntimeError, "Il numero di volte per cui la parola #{@r_h[:parola_frequente]} si ripete non e' corretto".color(RED) unless v.first.last == @r_h[:n_parola_frequente]
     end
     return v
   end
@@ -141,7 +141,7 @@ end # def crc16
     puts "Raggiunti i requisiti minimi necessari per caricare il proprio compito"
     puts "Password: #{crc16("#{Cognome}.#{Nome}")}"
   else
-    puts "Per poter caricare il proprio compito è necessario aver svolto correttamente i primi due esercizi"
+    puts "Per poter caricare il proprio compito e' necessario aver svolto correttamente i primi due esercizi"
   end
   #puts c.code_efficiency
 #end

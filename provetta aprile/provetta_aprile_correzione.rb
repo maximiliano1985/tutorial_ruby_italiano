@@ -23,7 +23,7 @@ Matricola = 123456
 
 
 # 2. ESEGUIRE GLI ESERCIZI RIPORTATI IN QUESTO SCRIPT.
-# Alla fine di ogni esercizio è possibile verificare se questo è stato svolto 
+# Alla fine di ogni esercizio e' possibile verificare se questo e' stato svolto 
 # correttamente, eseguendo questo script Ruby, passandoci come argomento il 
 # numero dell'esercizio da corregere.
 #
@@ -68,11 +68,11 @@ $provetta[:n_parole] = $provetta[:parole].size
 
 
 
-# 3) Trovare qual'è la parola più frequente nel testo e associarla alla chiave
+# 3) Trovare qual'e' la parola più frequente nel testo e associarla alla chiave
 #     ':parola_frequente' della hash $provetta'. Salvare nella chiave
-#     ":n_parola_frequente" quante volte tale parola è ripetuta.
-# Suggerimento: creare una hash temporanea dove ogni chiave è la parola trovata
-# nel testo ed il valore a cui essa punta è il numero di volte che viene usata.
+#     ":n_parola_frequente" quante volte tale parola e' ripetuta.
+# Suggerimento: creare una hash temporanea dove ogni chiave e' la parola trovata
+# nel testo ed il valore a cui essa punta e' il numero di volte che viene usata.
 # Sarà poi sufficiente ordinare la hash per ottenere la parola chiave, a cui
 # punta il valore più alto.
 

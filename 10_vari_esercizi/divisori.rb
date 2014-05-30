@@ -22,9 +22,9 @@ require 'pp'
 #
 
 #
-# La struttura data è una combinazione di Hash e Array fatta in questo modo
+# La struttura data e' una combinazione di Hash e Array fatta in questo modo
 #
-# Un modo dell'albero è una hash con 2 campi:
+# Un modo dell'albero e' una hash con 2 campi:
 #  :number    --> un intero
 #  :divisors  --> un Array di Hash con i divisori
 #
@@ -33,11 +33,11 @@ require 'pp'
 def divisiori( n )
   root = { :number => n, :divisors => [] }
   #
-  # la ricorsione o meglio root è srruttura completa se `n` è un numero primo
-  # cioè non ha divisori. La prima cosa fare è calcolare i divisori
+  # la ricorsione o meglio root e' srruttura completa se `n` e' un numero primo
+  # cioe' non ha divisori. La prima cosa fare e' calcolare i divisori
   for i in 2..n/2
     if n % i == 0 then
-      # se arrivo qui, i è un divisore del numero n
+      # se arrivo qui, i e' un divisore del numero n
       root[:divisors] << divisiori( i ) ; # divisori(i) restituisce la Hash del
                                           # "sottoalbero" del divisore i
     end
@@ -62,7 +62,7 @@ end
 
 #
 # input come linea di comando.
-# se il comando è 
+# se il comando e' 
 #   ruby divisori.rb 100
 # ARGV[1] contiene 100
 

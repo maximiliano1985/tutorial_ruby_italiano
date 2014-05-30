@@ -22,7 +22,7 @@
 #-------------------------------------------------------------------------
 
 =begin
-Il gioco della vita è un famosissimo automa cellulare elaborato dal matematico
+Il gioco della vita e' un famosissimo automa cellulare elaborato dal matematico
 John Conway negli anni sessanta. Si tratta sostanzialmente di una griglia
 costituita da celle e ognuna di esse può essere o viva o morta(piena o vuota).
 Data una situazione iniziale della griglia, le successive iterazioni
@@ -82,7 +82,7 @@ end
 
 
 def riempi_griglia_random(griglia)  
-  # riempio la griglia con dei 'true' e 'false' generati casualmente. La probabilità che il valore casuale sia 'true' è impostata da p_true
+  # riempio la griglia con dei 'true' e 'false' generati casualmente. La probabilità che il valore casuale sia 'true' e' impostata da p_true
   p_true = 0.1 # probabilità di avere 'true' del 10 %
       
   for i in 0..CELLE_PER_COLONNA-1

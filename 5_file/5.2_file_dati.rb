@@ -16,7 +16,7 @@ require 'pry'
 
 
 #__________________________________________________________________________
-# 1. Leggere il file 'log.txt', e salvare ogni colonna in una hash dove la corrispondente chiave è ottenuta dall'intestazione del file. Farsi restiuire le chiavi della hash 'dati' e la dimensione della colonna con i dati sul tempo
+# 1. Leggere il file 'log.txt', e salvare ogni colonna in una hash dove la corrispondente chiave e' ottenuta dall'intestazione del file. Farsi restiuire le chiavi della hash 'dati' e la dimensione della colonna con i dati sul tempo
 #__________________________________________________________________________
 file = 'log.txt'
 

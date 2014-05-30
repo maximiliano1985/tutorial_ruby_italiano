@@ -38,7 +38,7 @@ Note:
 La funzione 'eulero_avanti' puo' essere testata sulla ODE:
   y' = - y + 3*x
 sapendo che se x0 = 0, x1 = 2, y0 = 1, npts = 10, la soluzione che deve essere
-restituita è (a meno di errori numerici):
+restituita e' (a meno di errori numerici):
 
 {:x=>[0, 0.2, 0.4, 0.6, 0.8, 1, 1.2, 1.4, 1.6, 1.8, 2],
 :y=>[1, 0.8, 0.52, 0.176, -0.219, -0.655, -1.124, -1.619, -2.136, -2.668, -3.215]}
