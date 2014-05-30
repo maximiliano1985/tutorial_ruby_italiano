@@ -279,8 +279,9 @@ class Checker
     raise ArgumentError, "Specificare cognome dello studente".color(RED)   if Cognome.empty?
     raise ArgumentError, "Specificare matricola dello studente".color(RED) if Matricola.to_i == 0
     
+    
     res = []
-    ESN.each{|k,v| res << k if v < x }
+    ESN.each{|k,v| res << k if v <= x }
     return res
   end
 end
