@@ -12,35 +12,45 @@
 #  Copyright (c) 2014 E.Bertolazzi e C.M. Giorgio Bort                    #
 #-------------------------------------------------------------------------#
 
-Nome      = 'Valentino'
-Cognome   = "Rossi"
-Matricola = 123456
-
 
 =begin
-  Generare una matrice NxM (N righe e M colonne) riempita a scacchiera con
-  asterischi '*' e spazi bianchi, e nella quale il primo elemento in posizione
-  (1,1) sia un asterisco.
-  La matrice deve essere salvata in una variabile che si chiama '$chess_matrix'.
-  La matrice deve essere rappresentata come un Array di Array nel quale
-  ogni elemento può essere un asterisco o uno spazio bianco.
-  E.g. [  ['*', ' ', '*', ' ', ...], 
-          [' ', '*', ' ', '*', ...],
-          ['*', ' ', '*', ' ', ...],
-           ........................  ]
+  Scrivere una funzione chiamata 'from10to3' che prende in ingresso un intero
+  definito in base 10, lo rappresenta in base 3, e restituisce la rappresentazione
+  sotto forma di stringa.
+
+  Procedura: dividere il numero da convertire per la base b fino a quando
+  l'ultimo quoziente e' minore della base stessa (b), dopodiche' il numero
+  convertito si ottiene prendendo l'ultimo quoziente e tutti i resti delle
+  divisioni, procedendo dall'ultimo resto al primo e scrivendoli da sinistra
+  verso destra.
 =end
 
-N = 10
-M = 5
 
 
 ################################################################################
 # RISOLVERE L'ESERCIZIO QUI
 ################################################################################
 
+# Soluzione ottimale
+#def from10to3(intero)
+#  raise ArgumentError, "Il numero in ingresso a from10to3 deve essere un intero" unless intero.class == Integer
+#  return intero.to_s(3)
+#end
 
-
-
+# Soluzione alternativa (non ottimale)
+def from10to3(intero)
+  raise ArgumentError, "Il numero in ingresso a from10to3 deve essere un intero" unless intero.class == Fixnum
+  s = ''
+  x = intero
+  base = 3
+  while 
+    s << (x % base).to_s
+    x /= base
+    break if x < base
+  end
+  s << x.to_s
+  return s.reverse!
+end
 
 ################################################################################
 # NON MODIFICARE LE LINEE DI CODICE RIPORTATE QUI DI SEGUITO

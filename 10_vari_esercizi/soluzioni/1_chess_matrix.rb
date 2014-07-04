@@ -24,10 +24,7 @@ Matricola = 123456
   La matrice deve essere salvata in una variabile che si chiama '$chess_matrix'.
   La matrice deve essere rappresentata come un Array di Array nel quale
   ogni elemento può essere un asterisco o uno spazio bianco.
-  E.g. [  ['*', ' ', '*', ' ', ...], 
-          [' ', '*', ' ', '*', ...],
-          ['*', ' ', '*', ' ', ...],
-           ........................  ]
+  E.g. ['*', ' ', '*', ' ', ...]
 =end
 
 N = 10
@@ -38,9 +35,20 @@ M = 5
 # RISOLVERE L'ESERCIZIO QUI
 ################################################################################
 
+# Creo la matrice
+$chess_matrix = [] #Array.new(N, Array.new(M, ' '))
+
+# Metto asterischi in posizioni alterne
+for i in 0...N do
+  $chess_matrix << []
+  for j in 0...5 do
+    $chess_matrix[i] << ((i+j).even? ? '*' : ' ')
+  end
+end
 
 
-
+# stampo la matrice (opzionale)
+### $chess_matrix.each{ |row| puts row.inspect}
 
 ################################################################################
 # NON MODIFICARE LE LINEE DI CODICE RIPORTATE QUI DI SEGUITO

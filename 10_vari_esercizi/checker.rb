@@ -264,10 +264,10 @@ class Checker
     ]
     
     if x > 1
-      (x-1).times do |i|
-        raise RuntimeError, "Manca file #{es_names[i]}".color(RED) unless File.exist?(es_names[i])
-        load(es_names[i])
-      end
+      #(x-1).times do |i|
+      #  raise RuntimeError, "Manca file #{es_names[i]}".color(RED) unless File.exist?(es_names[i])
+      #  load(es_names[i])
+      #end
     elsif x > es_names.size
       raise ArgumentError, "Numero di esercizio #{x} non valido".color(RED)
     end
@@ -281,7 +281,7 @@ class Checker
     
     
     res = []
-    ESN.each{|k,v| res << k if v <= x }
+    ESN.each{|k,v| res << k if v==x}#v <= x }
     return res
   end
 end
