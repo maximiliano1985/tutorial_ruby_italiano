@@ -17,7 +17,7 @@ require 'pp'
 #
 # Programma che legge un numero da terminale e costruisce una struttura
 # ad albero dei divisori.
-# Una volta costruita la stuttura scrive l'albero risultante in un file .dot
+# Una volta costruita la struttura scrive l'albero risultante in un file .dot
 # per visualizzarlo graficamente.
 #
 
@@ -33,7 +33,7 @@ require 'pp'
 def divisiori( n )
   root = { :number => n, :divisors => [] }
   #
-  # la ricorsione o meglio root e' srruttura completa se `n` e' un numero primo
+  # la ricorsione o meglio root e' struttura completa se `n` e' un numero primo
   # cioe' non ha divisori. La prima cosa fare e' calcolare i divisori
   for i in 2..n/2
     if n % i == 0 then
@@ -47,7 +47,7 @@ end
 
 #
 # to_dot e' una funzione che data la struttura dati dell' albero dei
-# divisori stampa una descrizione nel liguaggio "dot" di graphviz
+# divisori stampa una descrizione nel linguaggio "dot" di graphviz
 # dell'albero corrispondente
 #
 def to_dot( albero )
